@@ -12,7 +12,7 @@ public class Lift {
     public long itemID;
 
     private String liftName;
-    private long weight;
+    private double weight;
     private long reps;
     private long sets;
     private Date logTime;
@@ -21,8 +21,7 @@ public class Lift {
 
     }
 
-    public Lift(long itemID, String liftName, long weight, long reps, long sets, Date logTime) {
-        this.itemID = itemID;
+    public Lift(String liftName, double weight, long reps, long sets, Date logTime) {
         this.liftName = liftName;
         this.weight = weight;
         this.reps = reps;
@@ -46,11 +45,11 @@ public class Lift {
         this.liftName = liftName;
     }
 
-    public long getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(long weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 

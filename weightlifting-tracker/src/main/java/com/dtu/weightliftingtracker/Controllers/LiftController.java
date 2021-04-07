@@ -8,8 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,12 +32,31 @@ public class LiftController {
     }
 
     @RequestMapping("/resetLifts")
-    public List<Lift> resetLifts() {
+    public List<Lift> resetLifts() throws IOException {
         liftRepository.deleteAll();
-        liftRepository.save(new Lift(0, "Deadlift", 80, 3, 5, new Date(System.currentTimeMillis())));
-        liftRepository.save(new Lift(0, "Shoulder Press", 50, 2, 5, new Date(System.currentTimeMillis())));
-        liftRepository.save(new Lift(0, "Back Squat", 90, 1, 1, new Date(System.currentTimeMillis())));
-        liftRepository.save(new Lift(0, "Deadlift", 90, 3, 5, new Date(System.currentTimeMillis())));
+
+        String line;
+        int lineNr = 0;
+
+        // Read all lines in from CSV file and add to lift repository
+        FileReader fileReader = new FileReader(new File("./src/main/resources/static/lifting_data_anna.csv"));
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        while ((line = bufferedReader.readLine()) != null) {
+            if(lineNr != 0) {
+                String[] temp = line.split(";");
+                String liftName = temp[1];
+                String result = temp[4];
+                System.out.println(result);
+                double weight = Double.parseDouble(result.split("x")[1].split("@")[1].split("kg")[0].replaceAll("\\s", ""));
+                long reps = Integer.parseInt(result.split("x")[1].split("@")[0].replaceAll("\\s", ""));
+                long sets = Integer.parseInt(result.split("x")[0].replaceAll("\\s", ""));
+                Date date = new Date(temp[0]);
+                liftRepository.save(new Lift(liftName, weight, reps, sets, date));
+            }
+            lineNr += 1;
+        }
+        bufferedReader.close();
 
         return liftService.findAll();
     }

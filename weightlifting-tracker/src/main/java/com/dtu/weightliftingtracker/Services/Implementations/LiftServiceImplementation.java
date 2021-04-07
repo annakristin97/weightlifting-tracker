@@ -38,6 +38,11 @@ public class LiftServiceImplementation implements LiftService {
         return repository.findAll();
     }
 
+    @Override
+    public List<Lift> findByliftName(String liftName) {
+        return repository.findByliftName(liftName);
+    }
+
     /*@Override
     public Optional<Item> findByitemID(long itemID){
         return repository.findByitemID(itemID);

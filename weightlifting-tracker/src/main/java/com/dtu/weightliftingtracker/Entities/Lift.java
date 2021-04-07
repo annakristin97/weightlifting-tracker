@@ -1,27 +1,32 @@
 package com.dtu.weightliftingtracker.Entities;
 
-
 import javax.persistence.*;
-import java.util.Date;
 
+/**
+ * Entity for a single Lift
+ */
 @Entity
 @Table(name = "lifts")
 public class Lift {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long itemID;
-
+    @Column
     private String liftName;
+    @Column
     private double weight;
+    @Column
     private long reps;
+    @Column
     private long sets;
-    private Date logTime;
+    @Column
+    private long logTime;
 
     public Lift() {
 
     }
 
-    public Lift(String liftName, double weight, long reps, long sets, Date logTime) {
+    public Lift(String liftName, double weight, long reps, long sets, long logTime) {
         this.liftName = liftName;
         this.weight = weight;
         this.reps = reps;
@@ -69,11 +74,11 @@ public class Lift {
         this.sets = sets;
     }
 
-    public Date getLogTime() {
+    public long getLogTime() {
         return logTime;
     }
 
-    public void setLogTime(Date logTime) {
+    public void setLogTime(long logTime) {
         this.logTime = logTime;
     }
 }

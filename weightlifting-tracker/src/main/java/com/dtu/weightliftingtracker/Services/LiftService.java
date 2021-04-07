@@ -12,5 +12,6 @@ public interface LiftService {
     void deleteAll();
     //Optional<Item> findByitemID(long itemID);
     List<Lift> findAll();
+    List<Lift> findByliftName(String liftName);
     //List<Item> findByitemPriceLessThanEqual(long price);
 }

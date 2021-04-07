@@ -18,6 +18,7 @@ public interface LiftRepository extends JpaRepository<Lift, Long> {
     void deleteAll();
 
     List<Lift> findAll();
+    List<Lift> findByliftName(String liftName);
     //Optional<Item> findByitemID(long itemID);
     //List<Item> findByitemPriceLessThanEqual(long price);
 

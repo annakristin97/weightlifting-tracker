@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -33,11 +34,11 @@ public class LiftController {
         return liftService.findAll();
     }
 
-    @RequestMapping("lifts/time")
-    public List<Lift> getLiftsByTimeInterval(@RequestParam String timeInterval) {
-        System.out.println("get lifts by time interval");
-
-        Calendar calNow = Calendar.getInstance();
+    @RequestMapping("/lifts/search")
+    public List<Lift> searchLifts(@RequestParam String timeInterval, @RequestParam String liftName, @RequestParam long sets, @RequestParam long reps) {
+        List<Lift> setsLifts = liftService.findBySets(sets);
+        List<Lift> repsLifts = liftService.findByReps(reps);
+        List<Lift> typeLifts = liftService.findByliftName(liftName);
 
         Calendar from = Calendar.getInstance();
 
@@ -47,40 +48,14 @@ public class LiftController {
         else if(timeInterval.equals("Year")) from.add(Calendar.YEAR, -1);
         else if(timeInterval.equals("5 Years")) from.add(Calendar.YEAR, -5);
         else from.add(Calendar.YEAR, -50);
-        return liftService.getNewerThan(from.getTimeInMillis());
-    }
+        List<Lift> timeLifts =  liftService.getNewerThan(from.getTimeInMillis());
 
-    /**
-     * Get lifts by lift name
-     * @param liftName "Deadlift", "Shoulder Press",..
-     * @return
-     */
-    @RequestMapping("/lifts/liftname")
-    public List<Lift> getLiftsByLiftName(@RequestParam String liftName) {
-        System.out.println("get lifts by name");
-        return liftService.findByliftName(liftName);
-    }
+        List<Lift> lifts = new ArrayList<>(setsLifts);
+        lifts.retainAll(repsLifts);
+        lifts.retainAll(typeLifts);
+        lifts.retainAll(timeLifts);
 
-    /**
-     * Get lifts by sets
-     * @param sets 1, 2,..
-     * @return
-     */
-    @RequestMapping("/lifts/sets")
-    public List<Lift> getLiftsBySets(@RequestParam long sets) {
-        System.out.println("get lifts by sets");
-        return liftService.findBySets(sets);
-    }
-
-    /**
-     * Get lifts by reps
-     * @param reps 1, 2,..
-     * @return
-     */
-    @RequestMapping("/lifts/reps")
-    public List<Lift> getLiftsByReps(@RequestParam long reps) {
-        System.out.println("get lifts by reps");
-        return liftService.findBySets(reps);
+        return lifts;
     }
 
     /**

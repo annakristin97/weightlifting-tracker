@@ -43,8 +43,18 @@ public class LiftServiceImplementation implements LiftService {
         return repository.findByliftName(liftName);
     }
 
-    /*@Override
-    public Optional<Item> findByitemID(long itemID){
-        return repository.findByitemID(itemID);
-    }*/
+    @Override
+    public List<Lift> findBySets(long sets) {
+        return repository.findBySets(sets);
+    }
+
+    @Override
+    public List<Lift> findByReps(long reps) {
+        return repository.findByReps(reps);
+    }
+
+    @Override
+    public List<Lift> getNewerThan(long milliseconds) {
+        return repository.getNewerThan(milliseconds);
+    }
 }

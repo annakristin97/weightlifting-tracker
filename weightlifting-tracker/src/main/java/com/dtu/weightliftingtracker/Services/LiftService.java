@@ -10,8 +10,9 @@ public interface LiftService {
     Lift save(Lift lift);
     void delete(Lift lift);
     void deleteAll();
-    //Optional<Item> findByitemID(long itemID);
     List<Lift> findAll();
     List<Lift> findByliftName(String liftName);
-    //List<Item> findByitemPriceLessThanEqual(long price);
+    List<Lift> findBySets(long sets);
+    List<Lift> findByReps(long reps);
+    List<Lift> getNewerThan(long milliseconds);
 }

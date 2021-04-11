@@ -19,16 +19,11 @@ public interface LiftRepository extends JpaRepository<Lift, Long> {
 
     List<Lift> findAll();
     List<Lift> findByliftName(String liftName);
-    //Optional<Item> findByitemID(long itemID);
-    //List<Item> findByitemPriceLessThanEqual(long price);
+    List<Lift> findBySets(long sets);
+    List<Lift> findByReps(long reps);
 
-    /*@Transactional
-    @Modifying(clearAutomatically = true)
-    @Query("update Item i set i.itemBuyerID = :buyerID where i.itemID = :itemID")
-    void changeBuyerID(@Param("itemID") long itemID, @Param("buyerID") long buyerID);
-
+    @Modifying
     @Transactional
-    @Modifying(clearAutomatically = true)
-    @Query("update Item i set i.itemBuyerID = :buyerID where i.itemBuyerID = :oldBuyerID")
-    void removeBuyerID(@Param("buyerID") long buyerID, @Param("oldBuyerID") long oldBuyerID);*/
+    @Query("SELECT l FROM Lift l WHERE l.logTime >= :milliseconds")
+    List<Lift> getNewerThan(@Param("milliseconds") long milliseconds);
 }

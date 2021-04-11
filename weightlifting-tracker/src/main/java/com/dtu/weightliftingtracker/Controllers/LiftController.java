@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
+import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -22,13 +24,30 @@ public class LiftController {
     }
 
     /**
-     * Get all lifts
+     * Get ALL lifts
      * @return
      */
     @RequestMapping("/lifts")
     public List<Lift> getLifts() {
         System.out.println("get lifts");
         return liftService.findAll();
+    }
+
+    @RequestMapping("lifts/time")
+    public List<Lift> getLiftsByTimeInterval(@RequestParam String timeInterval) {
+        System.out.println("get lifts by time interval");
+
+        Calendar calNow = Calendar.getInstance();
+
+        Calendar from = Calendar.getInstance();
+
+        if(timeInterval.equals("Week")) from.add(Calendar.WEEK_OF_YEAR, -1);
+        else if(timeInterval.equals("Month")) from.add(Calendar.MONTH, -1);
+        else if(timeInterval.equals("3 Months")) from.add(Calendar.MONTH, -3);
+        else if(timeInterval.equals("Year")) from.add(Calendar.YEAR, -1);
+        else if(timeInterval.equals("5 Years")) from.add(Calendar.YEAR, -5);
+        else from.add(Calendar.YEAR, -50);
+        return liftService.getNewerThan(from.getTimeInMillis());
     }
 
     /**
@@ -40,6 +59,28 @@ public class LiftController {
     public List<Lift> getLiftsByLiftName(@RequestParam String liftName) {
         System.out.println("get lifts by name");
         return liftService.findByliftName(liftName);
+    }
+
+    /**
+     * Get lifts by sets
+     * @param sets 1, 2,..
+     * @return
+     */
+    @RequestMapping("/lifts/sets")
+    public List<Lift> getLiftsBySets(@RequestParam long sets) {
+        System.out.println("get lifts by sets");
+        return liftService.findBySets(sets);
+    }
+
+    /**
+     * Get lifts by reps
+     * @param reps 1, 2,..
+     * @return
+     */
+    @RequestMapping("/lifts/reps")
+    public List<Lift> getLiftsByReps(@RequestParam long reps) {
+        System.out.println("get lifts by reps");
+        return liftService.findBySets(reps);
     }
 
     /**
@@ -72,7 +113,7 @@ public class LiftController {
                 Date date = new Date(temp[0]);
 
                 // save log as a single Lift in our DB
-                liftRepository.save(new Lift(liftName, weight, reps, sets, date.getTime()));
+                liftRepository.save(new Lift(liftName, weight, reps, sets, date.getTime()+(2*Long.parseLong("31536000000"))));
             }
             lineNr += 1;
         }

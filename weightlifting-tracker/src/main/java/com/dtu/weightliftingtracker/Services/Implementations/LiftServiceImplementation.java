@@ -44,6 +44,12 @@ public class LiftServiceImplementation implements LiftService {
     }
 
     @Override
+    public List<Lift> findByLiftNameContains(String liftName) {
+        return repository.findByLiftNameContains(liftName);
+    }
+
+
+    @Override
     public List<Lift> findBySets(long sets) {
         return repository.findBySets(sets);
     }

@@ -15,4 +15,5 @@ public interface LiftService {
     List<Lift> findBySets(long sets);
     List<Lift> findByReps(long reps);
     List<Lift> getNewerThan(long milliseconds);
+    List<Lift> findByLiftNameContains(String title);
 }

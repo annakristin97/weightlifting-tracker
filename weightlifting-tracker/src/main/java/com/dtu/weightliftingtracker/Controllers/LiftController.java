@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class LiftController {
@@ -35,10 +32,32 @@ public class LiftController {
     }
 
     @RequestMapping("/lifts/search")
-    public List<Lift> searchLifts(@RequestParam String timeInterval, @RequestParam String liftName, @RequestParam long sets, @RequestParam long reps) {
-        List<Lift> setsLifts = liftService.findBySets(sets);
-        List<Lift> repsLifts = liftService.findByReps(reps);
-        List<Lift> typeLifts = liftService.findByliftName(liftName);
+    public List<Lift> searchLifts(@RequestParam String timeInterval, @RequestParam String liftName, @RequestParam String sets, @RequestParam String reps) {
+        List<Lift> lifts;
+        List<Lift> setsLifts;
+        List<Lift> repsLifts;
+        List<Lift> typeLifts;
+
+        if(sets.equals("All")) {
+            setsLifts = liftService.findAll();
+            lifts = new ArrayList<>(setsLifts);
+        } else {
+            long set_nr = Long.parseLong(sets);
+            setsLifts = liftService.findBySets(set_nr);
+            lifts = new ArrayList<>(setsLifts);
+        }
+
+        if(!reps.equals("All")) {
+            long rep_nr = Long.parseLong(reps);
+            repsLifts = liftService.findBySets(rep_nr);
+            lifts.retainAll(repsLifts);
+        }
+
+        //contains liftName
+        if(!liftName.equals("All")) {
+            typeLifts = liftService.findByLiftNameContains(liftName);
+            lifts.retainAll(typeLifts);
+        }
 
         Calendar from = Calendar.getInstance();
 
@@ -50,9 +69,6 @@ public class LiftController {
         else from.add(Calendar.YEAR, -50);
         List<Lift> timeLifts =  liftService.getNewerThan(from.getTimeInMillis());
 
-        List<Lift> lifts = new ArrayList<>(setsLifts);
-        lifts.retainAll(repsLifts);
-        lifts.retainAll(typeLifts);
         lifts.retainAll(timeLifts);
 
         return lifts;

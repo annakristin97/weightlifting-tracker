@@ -21,9 +21,13 @@ public interface LiftRepository extends JpaRepository<Lift, Long> {
     List<Lift> findByliftName(String liftName);
     List<Lift> findBySets(long sets);
     List<Lift> findByReps(long reps);
+    List<Lift> findByLiftNameContains(String liftName);
 
     @Modifying
     @Transactional
     @Query("SELECT l FROM Lift l WHERE l.logTime >= :milliseconds")
     List<Lift> getNewerThan(@Param("milliseconds") long milliseconds);
+
+    //@Query("SELECT l FROM Lift l where l.liftName = :id")
+    //List<Lift> findTitleById(@Param("id") Long id);
 }

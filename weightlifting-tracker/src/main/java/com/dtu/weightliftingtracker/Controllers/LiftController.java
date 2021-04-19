@@ -74,6 +74,20 @@ public class LiftController {
         return lifts;
     }
 
+    @RequestMapping("/lifts/add")
+    public List<Lift> addLift(@RequestParam String liftName,
+                              @RequestParam double weight,
+                              @RequestParam long sets,
+                              @RequestParam long reps) {
+
+        Calendar now = Calendar.getInstance();
+
+        Lift newLift = new Lift(liftName, weight, reps, sets, now.getTimeInMillis());
+        liftRepository.save(newLift);
+
+        return liftRepository.findAll();
+    }
+
     /**
      * Read in csv file and initialize db with content
      * @return

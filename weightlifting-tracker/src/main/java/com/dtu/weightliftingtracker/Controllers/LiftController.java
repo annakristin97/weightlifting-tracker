@@ -101,7 +101,7 @@ public class LiftController {
         int lineNr = 0;
 
         // Read all lines in from CSV file and add to lift repository
-        FileReader fileReader = new FileReader(new File("./src/main/resources/static/lifting_data_anna.csv"));
+        FileReader fileReader = new FileReader(new File("./src/main/resources/static/lifting_data_anna2.csv"));
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
         while ((line = bufferedReader.readLine()) != null) {

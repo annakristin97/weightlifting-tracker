@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.*;
 import java.time.Instant;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 public class LiftController {
@@ -125,5 +126,30 @@ public class LiftController {
         bufferedReader.close();
 
         return liftService.findAll();
+    }
+
+    @RequestMapping("/lifts/pr")
+    public List<Lift> getPrLifts() {
+        List<Lift> prLifts = new ArrayList<>();
+
+        // finna öll distinct lift names i DB
+        List<String> distinctLifts = liftRepository.getDistinctLiftNames();
+
+        // iterate i gegnum öll lift names..
+        List<Lift> finalPrLifts = prLifts;
+        distinctLifts.forEach(liftName -> {
+            // ..finna allar liftur með þetta lift name
+            List<Lift> lifts = liftRepository.findByliftName(liftName);
+            // ..finna max af þeim
+            Lift prLift = Collections.max(lifts, Comparator.comparingDouble(Lift::getWeight));
+            // ..bæta henni við pr listann okkar
+            finalPrLifts.add(prLift);
+        });
+
+        prLifts = finalPrLifts.stream()
+                .sorted(Comparator.comparing(Lift::getLiftName)).collect(Collectors.toList());
+
+        // skila pr listanum
+        return prLifts;
     }
 }

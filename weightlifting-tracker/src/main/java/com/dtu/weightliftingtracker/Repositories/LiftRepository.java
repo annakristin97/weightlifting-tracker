@@ -28,6 +28,6 @@ public interface LiftRepository extends JpaRepository<Lift, Long> {
     @Query("SELECT l FROM Lift l WHERE l.logTime >= :milliseconds")
     List<Lift> getNewerThan(@Param("milliseconds") long milliseconds);
 
-    //@Query("SELECT l FROM Lift l where l.liftName = :id")
-    //List<Lift> findTitleById(@Param("id") Long id);
+    @Query("SELECT DISTINCT l.liftName FROM Lift l")
+    List<String> getDistinctLiftNames();
 }

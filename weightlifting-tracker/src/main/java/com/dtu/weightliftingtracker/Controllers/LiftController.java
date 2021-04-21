@@ -119,7 +119,7 @@ public class LiftController {
                 Date date = new Date(temp[0]);
 
                 // save log as a single Lift in our DB
-                liftRepository.save(new Lift(liftName, weight, reps, sets, date.getTime()+(2*Long.parseLong("31536000000"))));
+                liftRepository.save(new Lift(liftName, weight, reps, sets, date.getTime()+(2*Long.parseLong("15525000000"))));
             }
             lineNr += 1;
         }
@@ -132,18 +132,22 @@ public class LiftController {
     public List<Lift> getPrLifts() {
         List<Lift> prLifts = new ArrayList<>();
 
-        // finna öll distinct lift names i DB
-        List<String> distinctLifts = liftRepository.getDistinctLiftNames();
-
+        // distinct lift names i DB
+        List<String> distinctLifts = new ArrayList<>(Arrays.asList(new String[]{"Deadlift", "Squat", "Bench Press", "Shoulder Press", "Push Press", "Snatch", "Clean", "Power Snatch", "Power Clean"}));
         // iterate i gegnum öll lift names..
         List<Lift> finalPrLifts = prLifts;
         distinctLifts.forEach(liftName -> {
             // ..finna allar liftur með þetta lift name
-            List<Lift> lifts = liftRepository.findByliftName(liftName);
-            // ..finna max af þeim
-            Lift prLift = Collections.max(lifts, Comparator.comparingDouble(Lift::getWeight));
-            // ..bæta henni við pr listann okkar
-            finalPrLifts.add(prLift);
+            List<Lift> lifts = liftRepository.findByLiftNameContains(liftName);
+
+            if(lifts != null) {
+                // ..finna max af þeim
+                Lift prLift = Collections.max(lifts, Comparator.comparingDouble(Lift::getWeight));
+
+                prLift.setLiftName(liftName);
+                // ..bæta henni við pr listann okkar
+                finalPrLifts.add(prLift);
+            }
         });
 
         prLifts = finalPrLifts.stream()

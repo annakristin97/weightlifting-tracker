@@ -1,15 +1,15 @@
 ﻿Date;Component;Affiliate Name;Class Name;Result;Is Personal Record;Personal Record Description;Performance Result Type;Comment;From Weightlifting Total
-02/20/2019;Power clean + P.Jerk;CrossFit Sudurnes;12:00 Ólympískar lyftingar;1 x 1 @ 50 kg;TRUE;PR by 15 kg vs. 35 on 11/17/2017;Weight;;FALSE
-02/20/2019;Hang Snatch + Snatch;CrossFit Sudurnes;12:00 Ólympískar lyftingar;6 x 1 @ 20 kg;FALSE;;Weight;;FALSE
-02/20/2019;Muscle Snatch + Hang Snatch + Snatch;CrossFit Sudurnes;12:00 Ólympískar lyftingar;6 x 1 @ 20 kg;FALSE;;Weight;;FALSE
-02/20/2019;2x Power Clean + 2x P.Jerk;CrossFit Sudurnes;12:00 Ólympískar lyftingar;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
-02/06/2019;Clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 47.5 kg;FALSE;;Weight;;FALSE
-02/06/2019;Hang clean + clean + Jerk;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
-02/06/2019;Power Clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 19 @ 30 kg;FALSE;;Weight;;FALSE
-02/06/2019;Power Clean + Jerk + Hang Clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
-02/06/2019;Power Snatch + Snatch;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 30 kg;FALSE;;Weight;;FALSE
-01/25/2019;Back Squat;CrossFit Sudurnes;12:00 CrossFit;1 x 6 @ 40 kg;FALSE;;Weight;;FALSE
-01/22/2019;Deadlift;CrossFit Sudurnes;16:30 CrossFit;4 x 8 @ 55 kg;FALSE;;Weight;;FALSE
+02/20/2018;Power clean + P.Jerk;CrossFit Sudurnes;12:00 Ólympískar lyftingar;1 x 1 @ 50 kg;TRUE;PR by 15 kg vs. 35 on 11/17/2017;Weight;;FALSE
+02/20/2018;Hang Snatch + Snatch;CrossFit Sudurnes;12:00 Ólympískar lyftingar;6 x 1 @ 20 kg;FALSE;;Weight;;FALSE
+02/20/2018;Muscle Snatch + Hang Snatch + Snatch;CrossFit Sudurnes;12:00 Ólympískar lyftingar;6 x 1 @ 20 kg;FALSE;;Weight;;FALSE
+02/20/2018;2x Power Clean + 2x P.Jerk;CrossFit Sudurnes;12:00 Ólympískar lyftingar;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
+02/06/2018;Clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 47.5 kg;FALSE;;Weight;;FALSE
+02/06/2018;Hang clean + clean + Jerk;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
+02/06/2018;Power Clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 19 @ 30 kg;FALSE;;Weight;;FALSE
+02/06/2018;Power Clean + Jerk + Hang Clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
+02/06/2018;Power Snatch + Snatch;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 30 kg;FALSE;;Weight;;FALSE
+01/25/2018;Back Squat;CrossFit Sudurnes;12:00 CrossFit;1 x 6 @ 40 kg;FALSE;;Weight;;FALSE
+01/22/2018;Deadlift;CrossFit Sudurnes;16:30 CrossFit;4 x 8 @ 55 kg;FALSE;;Weight;;FALSE
 12/07/2018;Snatch;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 25 kg;FALSE;;Weight;;FALSE
 12/07/2018;Power clean + P.Jerk;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 36 @ 20 kg;FALSE;;Weight;;FALSE
 12/07/2018;Power Snatch + Snatch Back Squat Thruster;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 25 kg;FALSE;;Weight;;FALSE
@@ -40,7 +40,7 @@
 06/23/2018;Dumbbell Prone Row;CrossFit Sudurnes;9:45 CrossFit;3 x 10 @ 10 kg;FALSE;;Weight;;FALSE
 06/23/2018;Single Arm Dumbell Press;CrossFit Sudurnes;9:45 CrossFit;3 x 10 @ 9 kg;FALSE;;Weight;;FALSE
 06/05/2018;Bulgarian Split Squat;CrossFit Sudurnes;12:00 CrossFit;4 x 10 @ 7.5 kg;FALSE;;Weight;;FALSE
-06/05/2018;Bekkpressa m. handlóð;CrossFit Sudurnes;12:00 CrossFit;4 x 10 @ 10 kg;FALSE;;Weight;;FALSE
+06/05/2018;Bench Press m. handlóð;CrossFit Sudurnes;12:00 CrossFit;4 x 10 @ 10 kg;FALSE;;Weight;;FALSE
 05/31/2018;Power Snatch;CrossFit Sudurnes;12:00 CrossFit;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
 05/31/2018;Power Clean;CrossFit Sudurnes;12:00 CrossFit;1 x 1 @ 60 kg;FALSE;;Weight;;FALSE
 05/17/2018;Hang Power Clean + Hang Squat Clean + Split Jerk;CrossFit Sudurnes;6:00 CrossFit;1 x 1 @ 45 kg;FALSE;;Weight;;FALSE
@@ -72,8 +72,8 @@
 04/09/2018;Shoulder Press;CrossFit Sudurnes;16:30 CrossFit;1 x 1 @ 40 kg;TRUE;PR by 2.5 kg vs. 37.5 on 10/12/2017;Weight;;FALSE
 04/09/2018;Deadlift;CrossFit Sudurnes;16:30 CrossFit;1 x 1 @ 105 kg;TRUE;PR by 2.5 kg vs. 102.5 on 12/04/2017;Weight;;FALSE
 04/06/2018;Clean Deadlift + Hang Power Clean + Jerk;CrossFit Sudurnes;12:00 CrossFit;1 x 1 @ 52.5 kg;FALSE;;Weight;;FALSE
-03/29/2018; Push Press + Power Jerk;CrossFit Sudurnes;11:30 CrossFit;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
-03/27/2018;Bekkpressa m. handlóð;CrossFit Sudurnes;16:30 CrossFit;4 x 10 @ 12.5 kg;TRUE;PR by 2.5 kg vs. 10 on 12/01/2017;Weight;;FALSE
+03/29/2018;Push Press + Power Jerk;CrossFit Sudurnes;11:30 CrossFit;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
+03/27/2018;Bench Press m. handlóð;CrossFit Sudurnes;16:30 CrossFit;4 x 10 @ 12.5 kg;TRUE;PR by 2.5 kg vs. 10 on 12/01/2017;Weight;;FALSE
 03/27/2018;Double KB walking lunge;CrossFit Sudurnes;16:30 CrossFit;4 x 20 @ 12 kg;FALSE;;Weight;;FALSE
 03/13/2018;Snatch;CrossFit Sudurnes;17:30 CrossFit;1 x 1 @ 40 kg;TRUE;PR by 7.5 kg vs. 32.5 on 11/03/2017;Weight;;FALSE
 02/19/2018;Snatch;CrossFit Sudurnes;16:30 CrossFit;1 x 2 @ 30 kg;FALSE;;Weight;;FALSE
@@ -101,7 +101,7 @@
 12/22/2017;Power clean + Hang clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 1 @ 42.5 kg;FALSE;;Weight;;FALSE
 12/22/2017;Muscle Clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 2 @ 30 kg;FALSE;;Weight;;FALSE
 12/04/2017;Deadlift;CrossFit Sudurnes;16:30 CrossFit;1 x 1 @ 102.5 kg;TRUE;PR by 17.5 kg vs. 85 on 11/28/2017;Weight;;FALSE
-12/01/2017;Bekkpressa m. handlóð;CrossFit Sudurnes;12:00 CrossFit;4 x 10 @ 10 kg;FALSE;;Weight;;FALSE
+12/01/2017;Bench Press m. handlóð;CrossFit Sudurnes;12:00 CrossFit;4 x 10 @ 10 kg;FALSE;;Weight;;FALSE
 11/30/2017;Front Squat;CrossFit Sudurnes;18:30 CrossFit;1 x 3 @ 52.5 kg;FALSE;;Weight;;FALSE
 11/30/2017;Front Squat;CrossFit Sudurnes;18:30 CrossFit;2 x 5 @ 40 kg;FALSE;;Weight;;FALSE
 11/29/2017;Power Clean + Split Jerk;CrossFit Sudurnes;19:30 Ólympískar lyftingar;4 x 1 @ 40 kg;FALSE;;Weight;;FALSE
@@ -148,17 +148,17 @@
 09/19/2017;Push press + Push jerk;CrossFit XY;6:00 CF 2;5 x 4 @ 30 kg;FALSE;;Weight;;FALSE
 09/18/2017;Back Squat;CrossFit XY;6:00 CF 2;5 x 5 @ 45 kg;FALSE;;Weight;;FALSE
 09/14/2017;Deadlift;CrossFit XY;6:00 CF 2;5 x 8 @ 55 kg;FALSE;;Weight;;FALSE
-04/20/2019;Power clean + P.Jerk;CrossFit Sudurnes;12:00 Ólympískar lyftingar;1 x 1 @ 60 kg;TRUE;PR by 15 kg vs. 35 on 11/17/2017;Weight;;FALSE
-02/20/2019;Hang Snatch + Snatch;CrossFit Sudurnes;12:00 Ólympískar lyftingar;6 x 1 @ 20 kg;FALSE;;Weight;;FALSE
-03/10/2019;Muscle Snatch + Hang Snatch + Snatch;CrossFit Sudurnes;12:00 Ólympískar lyftingar;6 x 1 @ 25 kg;FALSE;;Weight;;FALSE
-02/20/2019;2x Power Clean + 2x P.Jerk;CrossFit Sudurnes;12:00 Ólympískar lyftingar;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
-02/06/2019;Clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 3 @ 65 kg;FALSE;;Weight;;FALSE
+01/20/2018;Power clean + P.Jerk;CrossFit Sudurnes;12:00 Ólympískar lyftingar;1 x 1 @ 60 kg;TRUE;PR by 15 kg vs. 35 on 11/17/2017;Weight;;FALSE
+02/20/2017;Hang Snatch + Snatch;CrossFit Sudurnes;12:00 Ólympískar lyftingar;6 x 1 @ 20 kg;FALSE;;Weight;;FALSE
+03/10/2017;Muscle Snatch + Hang Snatch + Snatch;CrossFit Sudurnes;12:00 Ólympískar lyftingar;6 x 1 @ 25 kg;FALSE;;Weight;;FALSE
+02/20/2018;2x Power Clean + 2x P.Jerk;CrossFit Sudurnes;12:00 Ólympískar lyftingar;1 x 1 @ 40 kg;FALSE;;Weight;;FALSE
+02/06/2018;Clean;CrossFit Sudurnes;18:30 Ólympískar lyftingar;1 x 3 @ 65 kg;FALSE;;Weight;;FALSE
 10/27/2018;Back Squat;CrossFit Sudurnes;12:00 CrossFit;1 x 1 @ 90 kg;TRUE;PR by 10 kg vs. 70 on 10/02/2017;Weight;;FALSE
 11/07/2018;Deadlift;CrossFit Sudurnes;18:30 CrossFit;4 x 3 @ 80 kg;FALSE;;Weight;;FALSE
 04/30/2018;Push press + Push jerk;CrossFit XY;6:00 CF 2;5 x 4 @ 35 kg;FALSE;;Weight;;FALSE
 04/30/2018;Clean Deadlift + Hang Power Clean + Jerk;CrossFit Sudurnes;12:00 CrossFit;1 x 1 @ 60 kg;FALSE;;Weight;;FALSE
-03/29/2019; Push Press + Power Jerk;CrossFit Sudurnes;11:30 CrossFit;1 x 1 @ 45 kg;FALSE;;Weight;;FALSE
-03/27/2019;Bekkpressa m. handlóð;CrossFit Sudurnes;16:30 CrossFit;4 x 10 @ 12.5 kg;TRUE;PR by 2.5 kg vs. 10 on 12/01/2017;Weight;;FALSE
+03/29/2018;Push Press + Power Jerk;CrossFit Sudurnes;11:30 CrossFit;1 x 1 @ 45 kg;FALSE;;Weight;;FALSE
+03/27/2018;Bench Press m. handlóð;CrossFit Sudurnes;16:30 CrossFit;4 x 10 @ 12.5 kg;TRUE;PR by 2.5 kg vs. 10 on 12/01/2017;Weight;;FALSE
 09/27/2018;Double KB walking lunge;CrossFit Sudurnes;16:30 CrossFit;4 x 20 @ 12 kg;FALSE;;Weight;;FALSE
 08/13/2018;Snatch;CrossFit Sudurnes;17:30 CrossFit;1 x 1 @ 50 kg;TRUE;PR by 7.5 kg vs. 32.5 on 11/03/2017;Weight;;FALSE
 08/19/2018;Snatch;CrossFit Sudurnes;16:30 CrossFit;1 x 2 @ 35 kg;FALSE;;Weight;;FALSE

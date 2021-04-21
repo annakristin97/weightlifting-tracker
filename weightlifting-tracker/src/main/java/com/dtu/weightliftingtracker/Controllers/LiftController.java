@@ -101,6 +101,8 @@ public class LiftController {
         String line;
         int lineNr = 0;
 
+        List<String> distinctLifts = new ArrayList<>(Arrays.asList(new String[]{"Deadlift", "Front Squat", "Back Squat", "Bench Press", "Shoulder Press", "Push Press", "Push Jerk", "Snatch", "Clean"}));
+
         // Read all lines in from CSV file and add to lift repository
         FileReader fileReader = new FileReader(new File("./src/main/resources/static/lifting_data_anna2.csv"));
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -118,8 +120,15 @@ public class LiftController {
 
                 Date date = new Date(temp[0]);
 
-                // save log as a single Lift in our DB
-                liftRepository.save(new Lift(liftName, weight, reps, sets, date.getTime()+(2*Long.parseLong("15525000000"))));
+                Lift lift = new Lift(liftName, weight, reps, sets, date.getTime()+(2*Long.parseLong("15525000000")));
+
+                distinctLifts.forEach(name -> {
+                    if(lift.getLiftName().contains(name)) {
+                        lift.setLiftName(name);
+                        // save log as a single Lift in our DB
+                        liftRepository.save(lift);
+                    }
+                });
             }
             lineNr += 1;
         }
@@ -155,5 +164,10 @@ public class LiftController {
 
         // skila pr listanum
         return prLifts;
+    }
+
+    @RequestMapping("/lifts/liftnames")
+    public List<String> getDistinctLiftNames() {
+        return liftRepository.getDistinctLiftNames();
     }
 }

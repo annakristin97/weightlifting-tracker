@@ -167,7 +167,7 @@ public class LiftController {
     }
 
     @RequestMapping("/lifts/liftnames")
-    public List<String> getDistinctLiftNames() {
-        return liftRepository.getDistinctLiftNames();
+    public String[] getDistinctLiftNames() {
+        return liftRepository.getDistinctLiftNames().toArray(new String[0]);
     }
 }

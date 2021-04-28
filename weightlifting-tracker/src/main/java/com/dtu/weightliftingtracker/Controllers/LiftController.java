@@ -149,7 +149,7 @@ public class LiftController {
             // ..finna allar liftur með þetta lift name
             List<Lift> lifts = liftRepository.findByLiftNameContains(liftName);
 
-            if(lifts != null) {
+            if(lifts != null && lifts.size() > 0) {
                 // ..finna max af þeim
                 Lift prLift = Collections.max(lifts, Comparator.comparingDouble(Lift::getWeight));
 

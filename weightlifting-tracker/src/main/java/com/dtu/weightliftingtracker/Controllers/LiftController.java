@@ -76,7 +76,7 @@ public class LiftController {
     }
 
     @RequestMapping("/lifts/add")
-    public List<Lift> addLift(@RequestParam String liftName,
+    public Lift addLift(@RequestParam String liftName,
                               @RequestParam double weight,
                               @RequestParam long sets,
                               @RequestParam long reps) {
@@ -86,7 +86,7 @@ public class LiftController {
         Lift newLift = new Lift(liftName, weight, reps, sets, now.getTimeInMillis());
         liftRepository.save(newLift);
 
-        return liftRepository.findAll();
+        return newLift;
     }
 
     /**
@@ -142,7 +142,7 @@ public class LiftController {
         List<Lift> prLifts = new ArrayList<>();
 
         // distinct lift names i DB
-        List<String> distinctLifts = new ArrayList<>(Arrays.asList(new String[]{"Deadlift", "Squat", "Bench Press", "Shoulder Press", "Push Press", "Snatch", "Clean", "Power Snatch", "Power Clean"}));
+        List<String> distinctLifts = new ArrayList<>(Arrays.asList(getDistinctLiftNames()));
         // iterate i gegnum öll lift names..
         List<Lift> finalPrLifts = prLifts;
         distinctLifts.forEach(liftName -> {
